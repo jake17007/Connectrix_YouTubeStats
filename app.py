@@ -5,19 +5,19 @@ import sys, json;
 data = json.load(sys.stdin)
 
 # Parse the data for 'user'
-fitbitData = data[0]['fitbit']
-profileData = fitbitData[0]['profile']
-userData = profileData[0]['user']
+youtubeData = data[0]['youtube']
+channelStatistics = youtubeData[0]['channelStatistics']
+items = channelStatistics['items'][0]
+statistics = items['statistics']
 
-# Parse Fitbit data
-displayName = userData['displayName']
-weight = round(userData['weight'] * 2.2, 2)
-height = round(userData['height'] / 2.54, 2)
-
-greeting = displayName
+# Parse statistics data
+viewCount = statistics['viewCount']
+commentCount = statistics['commentCount']
+subscriberCount = statistics['subscriberCount']
+videoCount = statistics['videoCount']
 
 # Format into html (with bootstrap)
-html = '<div class="container">' + greeting + '<br>Weight: ' + str(weight) + '<br>Height: ' + str(height) + '</div>'
+html = '<div class="container" style="padding-top: 20px">View Count: ' + str(viewCount) + '<br>comment Count : ' + str(commentCount) + '<br>Subscriber Count: ' + str(subscriberCount) + '<br>Video Count: ' + str(videoCount) + '</div>'
 
 # Output
 print(json.dumps({'html': html}))
