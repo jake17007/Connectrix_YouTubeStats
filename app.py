@@ -17,7 +17,7 @@ subscriberCount = statistics['subscriberCount']
 videoCount = statistics['videoCount']
 
 # Format into html (with bootstrap)
-html = '<div class="container" style="padding-top: 20px">View Count: ' + str(viewCount) + '<br>comment Count : ' + str(commentCount) + '<br>Subscriber Count: ' + str(subscriberCount) + '<br>Video Count: ' + str(videoCount) + '</div>'
+html = '<div class="container" style="padding-top: 20px">View Count: ' + str(viewCount) + '<br>Comment Count : ' + str(commentCount) + '<br>Subscriber Count: ' + str(subscriberCount) + '<br>Video Count: ' + str(videoCount) + '</div>'
 
 # Output
 print(json.dumps({'html': html}))
